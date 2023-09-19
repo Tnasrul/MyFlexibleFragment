@@ -1,3 +1,4 @@
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -6,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.dicoding.myflexiblefragment.ProfileActivity
 import com.dicoding.myflexiblefragment.R
 
 class DetailCategoryFragment : Fragment() {
@@ -51,6 +53,10 @@ class DetailCategoryFragment : Fragment() {
             val optionDialogFragment = OptionDialogFragment()
             val fragmentManager = childFragmentManager
             optionDialogFragment.show(fragmentManager, OptionDialogFragment::class.java.simpleName)
+        }
+        btnProfile.setOnClickListener{
+            val intent = Intent(requireActivity(), ProfileActivity::class.java)
+            startActivity(intent)
         }
     }
 
